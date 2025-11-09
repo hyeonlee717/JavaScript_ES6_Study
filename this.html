@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">버튼</button>
+    <script>
+        // 'use strict'
+
+        // console.log(this);
+        // -> 실행 주체인 global object라고 불리는 window를 가리킴
+
+        // function func() {
+        //     console.log(this);
+        // }
+        // func();
+        // -> 실행 주체인 global object라고 불리는 window를 가리킴
+
+        // let obj = {
+        //     data: 'kim',
+        //     func: function () {
+        //         console.log(this);
+        //     }
+        // }
+        // obj.func();
+        // -> 실행 주체인 'obj'를 가리킴
+
+        // let obj = {
+        //     data: {
+        //         func: function () {
+        //             console.log(this);
+        //         }
+        //     }
+        // }
+        // obj.data.func()
+
+        // let obj = {
+        //     data: {
+        //         func: () => {
+        //             console.log(this);
+        //         }
+        //     }
+        // }
+        // obj.data.func();
+
+        // document.getElementById('button').addEventListener('click', function () {
+        //     console.log(this);
+        // })
+        // document.getElementById('button').addEventListener('click', function (e) {
+        //     console.log(e.currentTarget);
+        // })
+        // 현재 이벤트가 동작하는 html 태그를 가리킴
+
+        // document.getElementById('button').addEventListener('click', function () {
+        //     let arr = [1, 2, 3];
+        //     arr.forEach(function (a) {
+        //         console.log(this);
+        //     })
+        // })
+
+        let obj = {
+            name: ['kim', 'lee', 'park'],
+            func: function () {
+                obj.name.forEach(function () {
+                    console.log(this);
+                })
+            }
+        }
+        obj.func();
+    </script>
+</body>
+
+</html>
