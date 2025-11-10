@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="버튼">버튼이에요</button>
+    <script>
+        // 문제1
+        let 사람 = {
+            name: '손흥민',
+            sayHi: function () {
+                console.log('안녕 나는 ' + this.name)
+            }
+        }
+        사람.sayHi();
+
+        // 문제2
+        let 자료 = {
+            data: [1, 2, 3, 4, 5]
+        };
+        자료.전부더하기 = function () {
+            let sum = 0;
+            this.data.forEach(function (a) {
+                sum = sum + a;
+            })
+            console.log(sum);
+        }
+        자료.전부더하기();
+
+        // 문제3
+        document.getElementById('버튼').addEventListener('click', function () {
+            // console.log(this);
+            setTimeout(() => { console.log(this.innerHTML) }, 1000);
+        })
+    </script>
+
+</body>
+
+</html>
