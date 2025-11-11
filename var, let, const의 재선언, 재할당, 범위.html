@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var
+        var 이름 = 'Kim';
+        var 이름 = 'Park';
+        // 재선언 O
+        이름 = 'Choi';
+        // 재할당 O
+        console.log(이름);
+        // Choi
+        function 함수() {
+            var name = 'Kim';
+        }
+        console.log(name);
+        // 범위 : function
+
+        // let
+        let 나이 = 10;
+        // let 나이 = 15;
+        // 재선언 X
+        나이 = 20;
+        // 재할당 O
+        console.log(나이);
+        // 20
+        function 함수() {
+            let age1 = 40;
+            let age2 = 50;
+            console.log(age2);
+        }
+        함수();
+        // console.log(age1); 정의되지 않음
+        // let, const의 범위는 {}
+
+
+        // const
+        const 성별 = 'Male'
+        // const 성별 = 'Female'
+        // 재선언 X
+        // 성별 = 'Female'
+        // 재할당 X
+
+        // object
+        const 사람 = {
+            이름: 'Kim',
+            나이: 30,
+            성별: 'Male'
+        }
+        // 사람 = {
+        //     이름: 'Park',
+        //     나이: 20,
+        //     성별: 'Female'
+        // }
+        // object 자체는 재할당 x
+        사람.성별 = 'Female';
+        // object 안에 key의 value는 변경 가능함
+        // 이걸 재할당이라고 부르지 않음
+        console.log(사람);
+        Object.freeze(사람);
+        // value 조차 못 바꾸게 하는 함수
+        사람.나이 = 50;
+        console.log(사람);
+
+        // 정리
+        // var   재선언 o 재할당 o 범위 function
+        // let   재선언 x 재할당 o 범위 {}
+        // const 재선언 x 재할당 x 범위 {}
+    </script>
+</body>
+
+</html>
