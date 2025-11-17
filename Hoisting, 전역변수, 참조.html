@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // hoisting
+        // var 나이 = 30;
+        // 이라고 쓰면 JS는
+        // var 나이; 를 제일 위로 올려서 먼저 해석함
+        // 나이 = 30; 은 var 나이 = 30; 이 줄에서 해석
+        console.log(나이);
+        // var 나이가 밑에 있음에도 error가 아닌
+        // 선언만 되고 값이 할당 안됐을 때 뜨는 undefined라고 뜸
+        var 나이 = 30;
+        console.log(나이);
+
+        // 전역변수
+        console.log(나이);
+        console.log(window.나이);
+
+    </script>
+</body>
+
+</html>
