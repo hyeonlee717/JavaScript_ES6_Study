@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            인사: function () {
+                console.log(this.name + '안녕')
+            }
+        }
+
+        var person2 = {
+            name: '손흥민'
+        }
+
+        person.인사.apply(person2, [1, 2]);
+        person.인사.call(person2, 1, 2);
+        // apply는 array형태로 파라미터 삽입 가능
+    </script>
+</body>
+
+</html>
