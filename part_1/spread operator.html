@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = ['hello', 'world'];
+        // console.log(...arr);
+        // var text = 'hello';
+        // console.log(...text);
+
+        // var a = [1, 2, 3];
+        // var b = [4, 5];
+        // var c = [...a, ...b];
+        // console.log(c);
+        // 대괄호를 풀고 1,2,3으로 바뀐다고 생각하면됨
+
+        // var a = [1, 2, 3];
+        // var b = a;
+        // var c = [...a];
+        // a[3] = 4;
+        // console.log(b);
+        // // 이렇게 하면 b는 a의 값을 다 그대로 공유하기 때문에 deep copy가 안됨
+        // console.log(c);
+        // // spread operator로 deep copy를 한 모습
+
+        var o1 = { a: 1, b: 2 };
+        var o2 = { ...o1, a: 10, c: 3 };
+        console.log(o2);
+        // 값 중복시 가장 뒤에 있는 것으로 적용
+    </script>
+</body>
+
+</html>
