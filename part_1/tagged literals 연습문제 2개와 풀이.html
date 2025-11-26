@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var pants = 0; var socks = 100;
+        `바지${pants} 양말${socks}`;
+
+        // 1. 바지와 양말의 갯수를 바꾸고 싶을때?
+        // function 숫자바꾸기(문자들, 변수0, 변수1) {
+        //     console.log(문자들[0] + 변수1 + 문자들[1] + 변수0);
+        // }
+        // 숫자바꾸기`바지${pants} 양말${socks}`
+
+        // 2. 갯수가 0이면 안팔아요 출력되게?
+        function 안팔아요(문자들, 변수0, 변수1) {
+            if (변수0 == 0) {
+                변수0 = '안팔아요';
+            }
+            if (변수1 == 0) {
+                변수1 = '안팔아요';
+            }
+            console.log(문자들[0] + 변수0 + 문자들[1] + 변수1);
+        }
+        안팔아요`바지${pants} 양말${socks}`
+    </script>
+</body>
+
+</html>
