@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function 함수(a, b, c) {
+            // console.log(arguments[0]);
+            // console.log(arguments[1]);
+            // console.log(arguments[2]);
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        // arguments는 함수의 파라미터들을 array 자료형으로 담아주는 역할을 함
+        함수(1, 2, 3);
+    </script>
+</body>
+
+</html>
