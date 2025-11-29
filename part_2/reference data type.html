@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // reference data type
+        // Array, Object는 변수에 저장되는게 아님
+        // 가리키는 화살표가 저장된다고 이해해야함, 참조값
+        var 변수 = 1234;
+        // 변수에 저장됨
+        var arr = [1, 2, 3, 4];
+        var obj = { name: 'kim', age: 13 };
+        // 변수에 저장되는게 아니고 화살표가 저장됨
+        // "[1,2,3,4]가 저기 저장되어 있습니다"
+        // "{ name: 'kim', age: 13 }가 저기 저장되어 있습니다"
+
+        var name1 = 'kim';
+        var name2 = name1;
+        name1 = 'park';
+        console.log(name1); // park
+        console.log(name2); // kim
+
+        var name3 = { name: 'kim' }; // 화살표(reference)
+        var name4 = name3; // 화살표(reference)
+        name3.name = 'park'
+        console.log(name3); // {name: 'park'}
+        console.log(name4); // {name: 'park'}
+        // name3은 {name:'kim'} obj를 가리키는 화살표를 담고있음
+        // {name:'park'}으로 데이터가 바뀌면
+        // 이 데이터를 가리키고 있던 화살표들도 다 이걸 가리키는 걸로 인식하게 됨
+        // 따라서, name4도 {name:'kim'}이 아니라 {name:'park'}임
+
+        var name5 = { name: 'kim' };
+        function func(obj) {
+            obj = { name: 'park' };
+            return obj;
+        }
+        console.log(name5); // { name: 'kim' }
+        console.log(func(name5)); // { name: 'park' }
+        // 새로 생성된 obj라는 변수가 {name: 'park'}를 가리키는 화살표
+    </script>
+</body>
+
+</html>
