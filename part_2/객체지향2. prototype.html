@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student_Constructor(n, a) {
+            this.name = n;
+            this.age = a;
+            this.sayHi = function () {
+                console.log('안녕하세요' + this.age + '세' + this.name)
+            };
+        }
+        Student_Constructor.prototype.gender = '남';
+
+        var stu1 = new Student_Constructor('kim', 15);
+        stu1.sayHi();
+        var stu2 = new Student_Constructor('park', 20);
+        stu2.sayHi();
+
+        console.log(Student_Constructor.prototype);
+        // constructor에 prototype이라는 비밀 공간이 있음
+        // 유전자에 비유
+        console.log(stu1.gender);
+        // stu1에는 gender라는 key가 없지만
+        // javascript의 작동 방식에 의해 부모, 부모, 부모 *** 의 해당 key 값을 계속 찾음
+
+        var arr = [1, 2, 3, 0];
+        // var arr = new Array(1,2,3); 원래는 이거임
+        console.log(Array.prototype);
+        // Array안에 수 많은 함수들이 존재
+        // 그 중 하나가 .sort()
+        // 따라서,
+        console.log(arr.sort());
+        // 이런 식으로 사용 가능
+
+        // 결론
+        // instance 생성시 parameter를 도입하여 값이 변하는 것은 constructor에
+        // 값이 변하지 않는 것은 prototype에(예를 들어, function 함수 같은거)
+    </script>
+</body>
+
+</html>
