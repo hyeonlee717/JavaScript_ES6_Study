@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 학교의 학생 관리 프로그램을 만든다고 할 때,
+        // var stu1 = { name: 'kim', age: 15 };
+        // var stu2 = { name: 'lee', age: 15 };
+        // 이렇게 각각 만들면 하드코딩
+        // 비슷하게 반복되는 object를 많이 생성할 때는 constructor 사용
+        function Student(a, b) {
+            this.name = a;
+            this.age = b;
+            this.sayHi = function () {
+                console.log('안녕하세요' + this.age + '세' + this.name);
+            }
+        }
+        // constructor의 이름은 첫글자 대문자
+        // 새로 생성되는 object의 key, value를 설정해놓음
+        var stu1 = new Student('kim', 15);
+        var stu2 = new Student('park', 20);
+        // constructor 사용방법 = new
+        console.log(stu1);
+        console.log(stu2);
+        stu1.sayHi();
+        stu2.sayHi();
+        // constructor : object 생성 기계
+        // 생성된 object : intance
+
+        // 연습문제
+        // var product1 = { name : 'shirts', price : 50000 };
+        // var product2 = { name : 'pants', price : 60000 };
+        function Prod_Constructor(name, price) {
+            this.name = name;
+            this.price = price;
+            this.부가세 = function () {
+                console.log(this.price / 10);
+            }
+        }
+        var product1 = new Prod_Constructor('shirts', 50000);
+        var product2 = new Prod_Constructor('pants', 60000);
+        console.log(product1);
+        console.log(product2);
+        product1.부가세();
+        product2.부가세();
+    </script>
+</body>
+
+</html>
