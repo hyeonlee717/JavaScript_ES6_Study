@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student_Constructor(n, a) {
+            this.name = n;
+            this.age = a;
+            this.sayHi = function () {
+                console.log('안녕하세요' + this.age + '세' + this.name)
+            };
+        }
+
+        Student_Constructor.prototype.gender = '남';
+
+        var stu1 = new Student_Constructor('kim', 15);
+        var stu2 = new Student_Constructor('park', 20);
+
+        console.log(stu1.__proto__);
+        console.log(stu1.__proto__.__proto__);
+        console.log(stu1.__proto__.__proto__.__proto__);
+        console.log(Object.getPrototypeOf(stu1));
+        console.log(stu1.constructor);
+        // 부모의 prototype 조사하는 방법
+
+        // constructor를 생성해야 prototype이 만들어지는데
+        // 그렇지 않고도 prototype을 만들 수 있음
+        var obj = {};
+        var proto = {
+            sayHi() {
+                console.log('안녕');
+            }
+        };
+        Object.setPrototypeOf(obj, proto);
+        // 왼쪽놈의 부모 prototype이 오른쪽 놈으로 강제로 주입됨
+        obj.sayHi();
+        // 안녕
+
+        var parents = { name: 'kim', age: 50 };
+
+        var children = Object.create(parents);
+        // 이렇게 해도 자식의 prototype을 주입가능
+        children.name = 'park';
+        children.age = 20;
+        console.log(children.name);
+        // kim
+
+        var grandson = Object.create(children);
+        console.log(grandson.age);
+    </script>
+</body>
+
+</html>
