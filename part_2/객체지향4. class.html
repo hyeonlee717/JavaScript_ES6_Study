@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class User {
+            constructor(a, b) {
+                this.name = a; // 필드값
+                this.phone = b; // 필드값
+            }
+
+            // name = 'kim';
+            // phone = '1234';
+            // 파라미터 안쓰면 그냥 이렇게 필드값 생성가능
+
+            printAll = function () { // 메소드
+                console.log(user2.name + user2.phone);
+            } // prototype에 추가하는 것과 동일
+
+        }
+
+        var user1 = new User('kim', '1234');
+        var user2 = new User('lee', '5678');
+        console.log(user1);
+
+    </script>
+</body>
+
+</html>
