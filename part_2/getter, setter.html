@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var p1 = {
+            name: 'Park',
+            age: 30,
+            get nextAge() { // get을 적으면 nextAge 함수 사용시 () 안써도 됨!
+                return this.age + 1;
+            }, // getter는 데이터를 꺼내와야 하니까 return 꼭 필요!
+            set setAge(age) { // set을 적으면 setAge 함수 사용시 () 안써도 됨!
+                this.age = parseInt(age);
+            } // setter는 데이터를 변경해야 하니까 parameter 1개 꼭 필요!
+        }
+        p1.age; // 30, 요즘은 이렇게 바로 꺼내는게 아니고 꺼내는 방법을 만들어서 꺼낸다
+        p1.nextAge;
+        p1.age = 20; // 이렇게 직접 변경해도 되지만, 변경하는 방법을 만들어서 변경함
+        p1.setAge = 20; // parseInt로 '20'처럼 text입력하는 실수 방지 가능
+
+        // class에서도 똑같이 적용 가능
+        class Person {
+            constructor() {
+                this.name = 'Lee';
+                this.age = 50;
+            }
+            get nextAge() {
+                return this.age + 1;
+            }
+            set setAge(age) {
+                this.age = age;
+            }
+        }
+        var person1 = new Person;
+
+        var nextAge = person1.nextAge;
+        console.log(nextAge); // 51
+        person1.setAge = 21;
+        var age = person1.age;
+        console.log(age); // 21
+    </script>
+</body>
+
+</html>
