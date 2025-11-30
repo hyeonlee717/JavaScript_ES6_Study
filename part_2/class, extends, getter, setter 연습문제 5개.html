@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. class 구조 만들어보기
+        // var 강아지1 = { type : '말티즈', color : 'white' };
+        // var 강아지2 = { type : '진돗개', color : 'brown' };
+        class Dog {
+            constructor(type, color) {
+                this.type = type;
+                this.color = color;
+            }
+            한살먹기() {
+                if (this.age !== undefined) {
+                    this.age++
+                    console.log(this.age);
+                } else {
+                    console.log('나이정보없음')
+                }
+            }
+        }
+        var 강아지1 = new Dog('말티즈', 'white');
+        console.log(강아지1);
+        var 강아지2 = new Dog('진돗개', 'brown');
+        console.log(강아지2);
+        강아지1.한살먹기();
+
+        // 2. 고양이 object들 만들기
+        // var 고양이1 = { type : '코숏', color : 'white', age : 5 };
+        // var 고양이2 = { type : '러시안블루', color : 'brown', age : 2 };
+        class Cat extends Dog {
+            constructor(type, color, age) {
+                super(type, color);
+                this.age = age;
+            }
+        }
+        var 고양이1 = new Cat('코숏', 'white', 5);
+        console.log(고양이1);
+        var 고양이2 = new Cat('러시안블루', 'brown', 2);
+        console.log(고양이2);
+        고양이1.한살먹기();
+
+        // 4. getter/setter 이용 게임 만들기
+        class Unit {
+            constructor(공격력 = 5, 체력 = 100) {
+                this.공격력 = 공격력;
+                this.체력 = 체력;
+            }
+            get battlePoint() {
+                return this.공격력 + this.체력;
+            }
+            set heal(힐량) {
+                this.체력 = this.체력 + 힐량;
+            }
+        }
+        var unit1 = new Unit;
+        console.log(unit1); // (1) 기본 공격력 5, 기본 체력 100
+        console.log(unit1.battlePoint); // (2) 더한 값 105
+        unit1.heal = 50;
+        console.log(unit1.체력); // (3) 150으로 증가함
+
+        // 5. getter/setter 이용 2
+        var data = {
+            odd: [],
+            even: [],
+            setter함수(...rest) {
+                for (var i = 0; i < rest.length; i++) {
+                    if (rest[i] % 2 == 1) {
+                        this.odd.push(rest[i]);
+                    } else {
+                        this.even.push(rest[i]);
+                    }
+                }
+                console.log(data);
+            },
+            getter함수() {
+                return console.log([...this.even, ...this.odd].sort());
+            }
+        }
+        data.setter함수(1, 2, 3, 4, 5);
+        data.getter함수(1, 2, 3, 4, 5);
+    </script>
+</body>
+
+</html>
