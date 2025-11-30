@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // -----------------------------------------------
+        class User {
+            constructor(id) {
+                this.id = id;
+                this.email = 'test';
+            }
+            sayHi() { // prototype에 들어갈 함수
+                console.log('안녕');
+            }
+        }
+        var user1 = new User('kim');
+        console.log(user1);
+        user1.sayHi();
+        // -----------------------------------------------
+        class Seller extends User { // User Class를 Inheritance(상속) 받음
+            constructor(id) { // 상속 받는 파라미터 입력
+                super(id); // 상속 받는 필드값들 super
+                this.company = 'samsung'; // 별도 추가 필드값
+            }
+            sayHi2() {
+                super.sayHi(); // prototype의 함수 상속
+            }
+        }
+        var seller1 = new Seller('kim');
+        console.log(seller1);
+        seller1.sayHi2();
+        // -----------------------------------------------
+    </script>
+</body>
+
+</html>
