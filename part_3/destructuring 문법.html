@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = 2;
+        // var b = 3;
+        // var c = 4;
+        var [a, b, c = 10] = [2, 3];
+        // Distructuring 문법 
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        // var obj = { name: 'Kim', age: 30 };
+        // var name = obj.name;
+        // var age = obj.age;
+        // 위 와 똑같은게 아랫줄
+        var { name = 'Park', age = 10 } = { name: 'Kim', age: 20 };
+        // positional하지 않고 그냥 key만 정확히 매칭시키면됨
+
+        var name = 'Kim';
+        var age = 30;
+        var obj = { name: name, age: age };
+        var obj = { name, age } // 윗줄이랑 같은 문법임
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import 씨, { a as 에이, b } from '/part_3/library.js'
+        console.log(에이); // 그냥 export한거는 as로 별명
+        console.log(b);
+        console.log(씨); // default는 바로 별명 가능
+    </script>
+</body>
+
+</html>
