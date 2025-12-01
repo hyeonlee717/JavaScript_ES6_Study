@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var 프로미스 = new Promise(function (성공, 실패) { // 관습 : resolve, reject
+        //     var 어려운연산 = 1 + 1;
+        //     성공(어려운연산);
+        // }); // 성공/실패 판정 기계
+
+        // 프로미스
+        //     .then(function (결과) { // 프로미스가 성공일 경우 실행할 코드
+        //         console.log(결과);
+        //     })
+        //     .catch(function () { // 프로미스가 실패일 경우 실행할 코드
+        //         console.log('실패했어요');
+        //     })
+        //     .finally(function () { // 성공이든 실패든 실행할 코드
+
+        //     })
+
+        var 프로미스 = new Promise(function (성공, 실패) { // 관습 : resolve, reject
+            setTimeout(function () {
+                성공();
+            }, 5000);
+        }); // 성공/실패 판정 기계
+
+        프로미스
+            .then(function () { // 프로미스가 성공일 경우 실행할 코드
+                console.log('성공했어요');
+            })
+            .catch(function () { // 프로미스가 실패일 경우 실행할 코드
+                console.log('실패했어요');
+            })
+            .finally(function () { // 성공이든 실패든 실행할 코드
+
+            })
+
+        // promise의 3가지 상태
+        // 1. 성공 : resolved
+        // 2. 판정아직안함 : pending
+        // 3. 실패 : rejected
+
+        // promise에 대한 오해
+        // setTimeout처럼 비동기로 실행되는 함수를 사용될 때가 있을 뿐이지
+        // promise 자체가 비동기적 처리가 가능하게 해주는 문법에 의미가 있는 것은 아님
+    </script>
+</body>
+
+</html>
