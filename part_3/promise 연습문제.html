@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. <img> 이미지 로딩 성공시 특정 코드를 실행 -->
+    <img id="test" src="https://codingapple1.github.io/kona.jpg">
+    <script>
+        var promise1 = new Promise(function (성공, 실패) {
+            var img = document.getElementById('test');
+            img.addEventListener('load', function () {
+                성공();
+            });
+            img.addEventListener('error', function () {
+                실패();
+            });
+        });
+
+        promise1
+            .then(function () {
+                console.log('성공');
+            })
+            .catch(function () {
+                console.log('실패');
+            })
+    </script>
+    <!-- 2. Ajax 요청이 성공하면 무언가 코드를 실행 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        var promise2 = new Promise(function (성공, 실패) {
+            $.get('https://codingapple1.github.io/hello.txt')
+                .done(function (result) {
+                    성공(result);
+                });
+        });
+
+        promise2
+            .then(function (result) {
+                console.log(result);
+
+                var promise3 = new Promise(function (성공, 실패) {
+                    $.get('https://codingapple1.github.io/hello2.txt')
+                        .done(function (result) {
+                            성공(result);
+                        });
+
+                    return promise2;
+                })
+                    .then(function (result) {
+                        console.log(result);
+                    })
+            })
+    </script>
+</body>
+
+</html>
