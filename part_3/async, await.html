@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function 더하기() {
+            var 프로미스 = new Promise(function (성공, 실패) {
+                var 힘든연산 = 1 + 1;
+                성공(힘든연산);
+            });
+
+            try {
+                var 결과 = await 프로미스; // await : 프로미스 해결될 때까지 기다려!
+                console.log(결과);
+                console.log('프로미스 연산 성공');
+            } catch {
+                console.log('프로미스 연산 실패')
+            }
+            // try{이걸해보고 에러나면}catch{이걸 실행해주세요}
+
+            // 프로미스.then(function () {
+            //     console.log('성공했어요');
+            // })
+            // 바로 위 코드랑 같음, 근데 성공만 됨 실패는 try catch 문법 사용 ㄱ
+        }
+        더하기(); // 성공했어요
+    </script>
+</body>
+
+</html>
