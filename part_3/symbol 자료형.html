@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = { name: 'Kim' }; // object 선언 및 할당
+        person.weight = 100; // object 자료형 key, value 생성
+        person.height = 170; // object 자료형 key, value 생성
+
+        var weight = Symbol('my secret weight'); // Symbol 선언
+        person[weight] = 200; // Symbol 할당
+        var height = Symbol('my secret height'); // Symbol 선언
+        person[height] = 150; // Symbol 할당
+
+        console.log(person);
+        // {name: 'Kim', weight: 100, height: 170, Symbol(my secret 
+        // weight): 200, Symbol(my secret height): 150}
+
+        for (var key in person) {
+            console.log(person[key]);
+        }
+        // Kim
+        // 100
+        // 170
+
+        // Symbol 특징 3가지
+
+        // 1. var a = Symbol('설명1'), var b = Symbol('설명1')
+        // 설명이 같아도 다른 Symbol임
+
+        // 2. 같은 것으로 취급하고 전역 Symbol로 사용하려면
+        // var a = Symbol.for('설명1'), var b = Symbol.for('설명1')
+        // 이런 식으로 정의 해야함
+
+        // 3. var arr = [2,3,4];
+        // arr[Symbol.iterator]는 javascript의 기본 내장 Symbol
+    </script>
+</body>
+
+</html>

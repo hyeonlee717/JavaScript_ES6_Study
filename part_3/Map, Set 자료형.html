@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Map 자료형은 자료간의 연관성을 표현하기 위해 사용
+        var person = new Map();
+        person.set('name', 'Kim');
+        person.set('age', 20);
+        console.log(person);
+        // {'name' => 'Kim', 'age' => 20}
+        // object는 key에 text만 가능하지만
+        // Map은 key에 모든 자료형 가능
+        // ex) person.set(100, 'Park'); person.set([1,2,3], 'Park'); 등
+
+        var getAge = person.get('age');
+        console.log(getAge);
+        // get으로 자료 꺼내기
+
+        person.delete('age');
+        console.log(person);
+        // delete로 자료 삭제
+
+        console.log(person.size);
+        // Map 자료 갯수 세기
+
+        for (var key of person.keys()) {
+            console.log(key);
+        }
+        // Map 자료형 for of 반복문
+
+        var person = new Map([
+            ['name', 'Park'],
+            ['age', 40]
+        ]);
+        // Map 자료형에 직접 자료 입력하는 방법
+
+        var 출석부 = ['john', 'tom', 'andy', 'tom'];
+        console.log(출석부);
+        // ['john', 'tom', 'andy', 'tom']
+
+        var 출석부2 = new Set(['john', 'tom', 'andy', 'tom']);
+        console.log(출석부2);
+        // {'john', 'tom', 'andy'} 중복 제거됨
+
+        출석부2.add('sally'); // 추가(중복되면 추가안됨)
+        출석부2.delete('sally'); // 삭제
+        console.log(출석부2.has('sally')); // 가지고 있냐?
+        console.log(출석부2.size); // 갯수 count
+
+        // 중괄호 Set을 Arr로 변경하는 방법
+        var 출석부2Arr = [...출석부2];
+        console.log(출석부2Arr);
+    </script>
+</body>
+
+</html>
