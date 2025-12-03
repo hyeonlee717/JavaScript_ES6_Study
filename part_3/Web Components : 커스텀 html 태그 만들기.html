@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <custom-input name="이메일"></custom-input>
+    <custom-input name="비밀번호"></custom-input>
+    <script>
+        class 클래스 extends HTMLElement {
+            connectedCallback() {
+                let name = this.getAttribute('name');
+                this.innerHTML = `<label>${name}인풋입니다</label><input>`;
+            }
+        }
+        customElements.define('custom-input', 클래스);
+    </script>
+</body>
+
+</html>
