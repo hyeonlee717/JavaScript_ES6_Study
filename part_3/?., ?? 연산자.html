@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var user = {
+            name: 'kim',
+            // age: { value:20 }
+        };
+        console.log(user?.age);
+        // optional chaining 연산자
+        // user가 비어있으면(null, undefined) age 안불러줌
+        // 중첩된 object 지료에서 자료 뽑을때 reference 에러없이 안전하게 뽑기 위해 사용
+        console.log(user.age?.value);
+        // 에러를 잠깐 감출 수 있음
+        console.log(user.name ?? '로딩중');
+        // 해당 데이터가 서버에서 올때 시간이 걸리면 오른쪽꺼를 먼저 보여주는 역할
+    </script>
+</body>
+
+</html>
